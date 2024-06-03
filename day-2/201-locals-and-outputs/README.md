@@ -3,10 +3,10 @@
 2.  Below are some code examples of each input type:
 ```
 variable "object" {
-  type = object{
+  type = object({
     name = string
     type = string
-  }
+  })
   default = {
     name = "test-vm"
     type = "windows"
