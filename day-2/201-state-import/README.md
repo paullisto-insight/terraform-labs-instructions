@@ -49,21 +49,21 @@ You will create a `main.tf` file with the following:
 
 1. Import the Resource Group (your resource ID will vary)
   ```sh
-  terraform import azurerm_resource_group.main /subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/davessweettest1
+  terraform import azurerm_resource_group.main /subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/plistotestrg
   ```
 1. Import the VNet (your resource ID will vary)
   ```sh
-  terraform import azurerm_virtual_network.main /subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourcegroups/davessweettest1/providers/Microsoft.Network/virtualNetworks/davesvnet1
+  terraform import azurerm_virtual_network.main /subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourcegroups/plistotestrg/providers/Microsoft.Network/virtualNetworks/plistotestvnet
   ```
 
 ### Validate Imports
 1. Each import command you run should give you feedback as to whether or not the import succeeded.
   ```sh
   root@d7190a4a4411:/app/Day2/201-state-import/solution# terraform import azurerm_resource_group.main /subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/davessweettest1
-  azurerm_resource_group.main: Importing from ID "/subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/davessweettest1"...
+  azurerm_resource_group.main: Importing from ID "/subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/plistotestrg"...
   azurerm_resource_group.main: Import prepared!
     Prepared azurerm_resource_group for import
-  azurerm_resource_group.main: Refreshing state... [id=/subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/davessweettest1]
+  azurerm_resource_group.main: Refreshing state... [id=/subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/plistotestrg]
 
   Import successful!
 
