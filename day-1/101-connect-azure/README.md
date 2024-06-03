@@ -1,13 +1,14 @@
 # Download Terraform. 
 1.  Browse to the following link: https://developer.hashicorp.com/terraform/install#windows
-2.  Save the AMD64 Binary file to a folder of your choosing.
+2.  Extract the ZIP file that is downloaded. Copy the ```terraform.exe``` file to C:\temp\terraform. (create the folder if it doesn't exist)
 3.  Install VS Code: https://code.visualstudio.com/download (this can be installed to the user profile if you don't have admin rights)
-#OPTIONAL: Add Terraform Binary to Windows PATH Environment Variable (cannot be completed without admin rights)
+#OPTIONAL: Add Terraform Binary to Windows PATH Environment Variable (cannot be completed without admin rights).
 1.  Search for "View Advanced System Settings" in the Start Menu (Windows 11). Alternatively, run sysdm.cpl from an elevated command prompt.
 2.  Click the Advanced tab. Click Environment Variables.
 3.  In the top list, scroll down to the PATH variable, select it, and click Edit. Note: If the PATH variable does not exist, click New and enter PATH for the Variable Name.
 4.  In the Variable Value box, scroll to the end of the variable. If there is no semi-colon (;) at the end of the current path, add one, and then enter the path to the Terraform binary folder.
 5.  Click OK to close each dialog box.
+#ALTERNATIVELY: Once VS Code is installed, run the following command from a New Terminal inside VS Code (this will persist for the session only) ```$env:Path += ";C:\temp\terraform"```
 
 # Getting Started
 1.	Create a new folder for our first Terraform project.
