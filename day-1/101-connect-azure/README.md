@@ -8,7 +8,7 @@
 3.  In the top list, scroll down to the PATH variable, select it, and click Edit. Note: If the PATH variable does not exist, click New and enter PATH for the Variable Name.
 4.  In the Variable Value box, scroll to the end of the variable. If there is no semi-colon (;) at the end of the current path, add one, and then enter the path to the Terraform binary folder.
 5.  Click OK to close each dialog box.
-#ALTERNATIVELY: Once VS Code is installed, run the following command from a New Terminal inside VS Code (this will persist for the session only) ```$env:Path += ";C:\temp\terraform"```
+- #ALTERNATIVELY: Once VS Code is installed, run the following command from a New Terminal inside VS Code (this will persist for the session only) ```$env:Path += ";C:\temp\terraform"```
 
 # Getting Started
 1.	Create a new folder for our first Terraform project.
