@@ -6,24 +6,26 @@ State is important to the Terraform workflow. Sometimes you have resources that 
 
 ## How To
 1. Login to the [Azure Portal](https://portal.azure.com).
-1. Using the portal, create a new Resource Group with a name and location of your choice. You don't need to add tags because we won't be importing them.
 
-    ![](./img/create-rg.png)
-1. Using the portal, create a new VNet with a CIDR range "10.0.0.0/16". Make sure the VNet belongs to the Resource Group you just created!
+1. At the top of the web page in the search bar, type ```Virtual networks``` and under services click ```Virtual networks```.
 
-1. These 2 resources, the Resource Group and VNet, represent cloud resources that were created outside of Terraform. We now want to manage them via Terraform...
+1. In the top left hand corner until the title Virtual networks, click + Create.
+
+1. On the first tab, next to the Resource Group field, you will see a link to Create New. Fill this out with a new Resource Group name.
+
+1. Under the Storage account name: field type a name for your Virtual Network. 
+
+1. Change the Region to Australia East. Click Review and Create
 
 ### Step 1: Create the Resources in Terraform
 
-You will create a `main.tf` file with the following:
-1. A `terraform {}` block declaring the version of Terraform to use as well as the `azurerm` provider within the `required_providers` block.
-1. An `azurerm` block for the provider configuration.
-1. A [Resource Group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) with the same name and location as the Resource Group you created via the portal.
-1. A VNet resource with the same name, location, resource group, and CIDR range as the one you created in the  portal.
+Add the following to our main.tf file from yesterday's tutorial:
+1. A [Resource Group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) with the same name and location as the Resource Group you created in the earlier steps.
+1. A VNet resource with the same name, location, resource group, and CIDR range as the one you created in the earlier steps.
 
 ### Run Terraform Workflow
 
-1. Run `terraform init` and `terraform plan`... what do you notice about your plan?
+1. Run `terraform plan`... what do you notice about your plan?
 1. Run a `terraform apply -auto-approve` (don't ever do this in production, by the way!)... what happens?
 
 ### Understanding State, Resource Addressing, and Import for Azure
