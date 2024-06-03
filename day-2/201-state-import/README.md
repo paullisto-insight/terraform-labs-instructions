@@ -59,7 +59,7 @@ You will create a `main.tf` file with the following:
 ### Validate Imports
 1. Each import command you run should give you feedback as to whether or not the import succeeded.
   ```sh
-  root@d7190a4a4411:/app/Day2/201-state-import/solution# terraform import azurerm_resource_group.main /subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/davessweettest1
+  root@d7190a4a4411:/app/Day2/201-state-import/solution# terraform import azurerm_resource_group.main /subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/plistotestrg
   azurerm_resource_group.main: Importing from ID "/subscriptions/0174de8e-22d8-4082-a7a6-f4e808c60c08/resourceGroups/plistotestrg"...
   azurerm_resource_group.main: Import prepared!
     Prepared azurerm_resource_group for import
