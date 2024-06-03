@@ -8,9 +8,7 @@ You will discover Terraform functions and how to use a handful of them.
 
 ### Create Terraform Configuration
 
-You will create a `main.tf` file with the following:
-1. A `terraform {}` block declaring the version of Terraform to use as well as the `azurerm` provider within the `required_providers` block.
-1. An `azurerm` block for the provider configuration.
+Add the following to our `main.tf` file:
 1. 3 [variable blocks](https://www.terraform.io/language/values/variables):
     1. `resource_group_name` of [type](https://www.terraform.io/language/expressions/types) "string" (validation condition optional).
     1. `location` of [type](https://www.terraform.io/language/expressions/types) "string" (validation condition optional).
@@ -37,14 +35,6 @@ You will create a `main.tf` file with the following:
 
 ### Plan and Apply
 1. Run the Terraform workflow to Plan (with output) and Apply your IaC configuration.
-
-### Targeted Destroy
-1. Run `terraform state list` to see a list of the resource addresses in your deployment's statefile.
-1. Run a [targeted destroy](https://www.terraform.io/cli/commands/plan#target-address) on the "app" subnet.
-    1. **HINT** use `terraform destroy -h` from the command line to see how to pass the target option.
-    1. We recommend using single quotes `'` around the resource address from the command line.
-    1. Don't forget to pass in your .tfvars file with `-var-file=`.
-1. Cleanup the rest of your resources by destroying them when you're finished.
 
 ## Questions
 1. What do you notice about the `address_prefixes` and `name` values in your subnets in the plan output?
