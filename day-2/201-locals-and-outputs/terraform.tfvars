@@ -1,0 +1,4 @@
+object = {}
+list   = []
+map    = {}
+set    = []
