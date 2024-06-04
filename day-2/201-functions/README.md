@@ -31,7 +31,18 @@ Add the following to our `main.tf` file:
     1. Let's also make the subnet names a concatentation that includes the `var.vnet_name` variable using the [format function](https://www.terraform.io/language/functions/format). Try it out via the console before using it your Terraform configuration!
 
 ### Add Subnets to Terraform
-1. Create 3 [azurerm_subnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) resource blocks, one for "web", one for "app", and one for "db". Use `cidrsubnet` and `format` to help define the properties of each resource - refer to your console session if you need to look values up!
+1. Create 3 [azurerm_subnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) resource blocks, one for "web", one for "app", and one for "db". Use `cidrsubnet` and `format` to help define the properties of each resource - refer to your console session if you need to look values up! For an extra challenge, use an `object` variable and a `for_each` loop rather than creating 3 individual subnet resources. See an example below:
+```
+resource "azurerm_subnet" "subnets" {
+  for_each = local.subnets
+
+  # Mandatory resource attributes
+  name                 = each.value.name
+  resource_group_name  = azurerm_resource_group.test-rg.location
+  virtual_network_name = azurerm_virtual_network.test-vnet.name
+  address_prefixes     = [each.value.cidr]
+}
+```
 
 ### Plan and Apply
 1. Run the Terraform workflow to Plan (with output) and Apply your IaC configuration.
