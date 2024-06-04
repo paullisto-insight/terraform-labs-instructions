@@ -22,7 +22,7 @@ Add the following to our `main.tf` file:
 
 ### Init Terraform and Use the Console
 1. `terraform init` from the directory where your `main.tf` is.
-1. Run `terraform console -var-file=dev.tfvars` to drop into a console using your tfvars file as input. The console is a GREAT place for exploring functions! And we're going to just that.
+1. Run `terraform console -var-file="dev.tfvars"` to drop into a console using your tfvars file as input. The console is a GREAT place for exploring functions! And we're going to just that.
 1. Explore the console:
     1. Execute `var.vnet_cidr` to see the value of your variable input. It should match what's in your dev.tfvars file.
     1. We're going to use the [cidrsubnet function](https://www.terraform.io/language/functions/cidrsubnet) to calculate 3 CIDR blocks for use by the subnets that will belong to our vnet. We want to carve out 3 subnets with a /24. Using the `cidrsubnet` function, figure out how to create those 3 subnets!
