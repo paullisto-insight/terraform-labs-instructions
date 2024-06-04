@@ -18,16 +18,15 @@ You will create a `main.tf` file with the following:
         1. Local modules do not provide a syntax for versioning.
 1. Create a `dev.tfvars` file and enter values for `location` and `resource_group_name`. Save and close this file.
 
-> NOTE: The module we're consuming is for example purpose only... I wouldn't recommend designing your modules using the conventions you see in the Azure Database Module ;)
-
 ### Terraform Workflow and Modules
 1. Run `terraform init` from the directory where `main.tf` lives. **NOTE** the deprecation errors are expected - this module needs updating!
 1. Navigate to the `.terraform` directory, then `modules` directory. You should see a directory named `vnet` - notice how `terraform init` clones modules here!
 1. Explore the `vnet` directory. Compare it to the [source on github](https://github.com/Azure/terraform-azurerm-vnet) what do you notice?
 1. Run the plan/apply workflow, be sure to specify the `-var-file=dev.tfvars` and `-out=dev.tfplan` parameters.
 
-### Cleanup
-1. Destroy your database.
+### For an extra challenge.
+- Consider how the VM code that we've been working on over the past two days could be turned into a module. A child module can simply be a nested folder of the terraform working directory that has it's own ```main.tf``` and other `.tf` files.
+- [Calling a child module](https://developer.hashicorp.com/terraform/language/modules/syntax#calling-a-child-module)
 
 ## Questions
 1. What did you learn about `terraform init` and modules?
