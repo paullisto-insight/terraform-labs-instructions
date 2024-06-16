@@ -42,7 +42,7 @@ You decide to open up ports 22, 80, and 443 to all subnets via the `network` mod
 1. At a glance, which of your `azurerm_network_security_rule` addresses is for port 443?
 
 ### Unexpected Changes
-After your infrastructure has been running for some time, the security team implements a policy that port 22 is no longer allowed to be opened to the internet. You've been asked to amend your IaC to remove all network secaurity rules that allow inbound traffic from the internet on port 22.
+After your infrastructure has been running for some time, the security team implements a policy that port 22 is no longer allowed to be opened to the internet. You've been asked to amend your IaC to remove all network security rules that allow inbound traffic from the internet on port 22.
 
 1. Open `traps/count/network/main.tf` and locate the `local.inbound_allow_ports` list you defined prior.
 1. Remove the "22" from the list, effectively removing the rule from your `count` loop. Save the file.
