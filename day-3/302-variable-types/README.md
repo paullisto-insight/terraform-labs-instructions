@@ -7,8 +7,20 @@
 
 ## How To
 
+### Set Up our vNet Code
+Add the following to our `main.tf` file:
+1. 3 [variable blocks](https://www.terraform.io/language/values/variables):
+    1. `resource_group_name` of [type](https://www.terraform.io/language/expressions/types) "string" (validation condition optional).
+    1. `location` of [type](https://www.terraform.io/language/expressions/types) "string" (validation condition optional).
+    1. `vnet_name` of [type](https://www.terraform.io/language/expressions/types) "string" (validation condition optional).
+    1. `vnet_cidr` of [type](https://www.terraform.io/language/expressions/types) "string" (validation condition optional).
+1. A [Resource Group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group).
+1. Create an [azurerm_virtual_network](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) resource block and use the value of the `vnet_cidr` variable as the value for the `address_space` property (NOTE it's a list type, so place the var between brackets `[]`) . DO NOT add any subnets (yet)!
+1. Create a `dev.tfvars` file and fill out the values for your variables.
+  Note: Your `vnet_cidr` should conform to [RFC1918](https://datatracker.ietf.org/doc/html/rfc1918#section-3) address space, be in CIDR format, and contain enough IP addresses for you to split it up cleanly into 3 subnets. I recommend a `/16` for this lab.
+  For example, pick an address space such as `10.20.0.0/16` and if you get an error, try changing the number `20` in the second octet to a different number between 1 and 254.
+
 ### Refactor vNet Code
-1. This lab will refactor the `main.tf` that was created as part of [Day2/201-functions](../../Day2/201-functions/solution/main.tf). Create a copy of that `main.tf` file here.
 1. Refactor the variable blocks `vnet_name` and `vnet_cidr` into a single variable named `vnet`.
     1. Give the `vnet` variable a [description]().
     1. Make the variable an [object type] with two properties 1) name and 2) cidr
