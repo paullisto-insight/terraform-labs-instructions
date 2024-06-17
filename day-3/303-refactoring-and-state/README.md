@@ -30,10 +30,8 @@ Terraform is code, and as such, you may want to refactor it at some point. This 
     1. `vnet`
     1. `subnets`
 
-### Update main.tf
-1. Return to the top-level `main.tf` file in the root of `to_refactor`.
-1. Add a `module` block and source your module from the `network` directory.
-1. Finally, add the following outputs to the top-level `main.tf` (outputs need to "bubble up"):
+### Set outputs in main.tf - these outputs come from the child module
+1. Add the following outputs to the top-level `main.tf` (outputs need to "bubble up"):
     1. `vnet` with its value set to `module.network.vnet`
     1. `subnets`... fill in the blank on the value :)
     1. optional `network` which outputs a glob of `module.network`.
