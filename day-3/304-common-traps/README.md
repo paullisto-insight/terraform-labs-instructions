@@ -5,7 +5,7 @@ You will review and understand some of the most common traps or mistakes made in
 
 ## How To
 
-We're going to leverage the existing codebase we wrote during the [201-functions lab](../../Day2/201-functions). If you weren't here for that lab, please go back and review that codebase solution before beginning this lab.
+We're going to leverage the existing codebase we wrote during the [204-functions lab](../../Day2/204-functions). If you weren't here for that lab, please go back and review that codebase solution before beginning this lab.
 
 ## Code that Can't Be Deployed from Scratch
 One of the most common issues we've seen with teams who use Terraform is problems that arise when taking a mature Terraform codebase and attempt to deploy it into a net-new environment. It works in an existing environment, which is not treated as immutable, but rather has been added to, bit-by-bit, over time.
